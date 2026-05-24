@@ -1,65 +1,76 @@
-import Image from "next/image";
+"use client";
+
+import Link from 'next/link';
+import Image from 'next/image';
+import { motion } from 'framer-motion';
+
+const featuredProjects = [
+  { id: 'debonairs', title: 'Debonairs Pizza', image: 'https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=800&q=80', link: '/projects/debonairs-pizza' },
+  { id: 'double-you', title: 'Double You', image: 'https://images.unsplash.com/photo-1550745165-9bc0b252726f?w=800&q=80', link: '/projects/double-you' },
+  { id: 'anghami', title: 'Anghami', image: 'https://images.unsplash.com/photo-1614149162883-504ce4d13909?w=800&q=80', link: '/projects/anghami' },
+  { id: 'noor', title: 'Noor Intro', image: 'https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=800&q=80', link: '/projects/noor-intro' },
+];
 
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
+    <div className="flex flex-col items-center w-full px-5 md:px-8">
+      
+      {/* Hero Section */}
+      <motion.section 
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, ease: "easeOut" }}
+        className="max-w-5xl text-center pt-12 md:pt-20 pb-20 md:pb-32"
+      >
+        <p className="text-gray-400 text-xs md:text-sm font-semibold tracking-widest uppercase mb-4 md:mb-6">Creative Direction & Motion</p>
+        <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-medium leading-tight tracking-tight text-gray-100 mb-6 md:mb-8">
+          I specialize in crafting visual experiences that help brands achieve their goals through <span className="italic">innovative design</span> and dynamic motion graphics.
+        </h1>
+        <a href="mailto:mrmohameddzn@gmail.com" className="inline-block px-6 py-3 md:px-8 md:py-4 bg-white text-black text-sm md:text-base font-semibold rounded-full hover:scale-105 transition-transform">
+          mrmohameddzn@gmail.com
+        </a>
+      </motion.section>
+
+      {/* Featured Work Grid */}
+      <section className="w-full max-w-7xl pb-16 md:pb-20">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
+          {featuredProjects.map((project, i) => (
+            <motion.div
+              key={project.id}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{ duration: 0.6, delay: i * 0.1 }}
             >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
+              <Link href={project.link} className="group block relative aspect-[4/3] md:aspect-video overflow-hidden rounded-xl md:rounded-2xl bg-gray-900 border border-white/10">
+                <Image 
+                  src={project.image} 
+                  alt={project.title} 
+                  fill 
+                  className="object-cover transition-transform duration-700 group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/40 transition-colors duration-500 flex items-center justify-center">
+                  <span className="opacity-0 group-hover:opacity-100 text-white font-medium text-base md:text-lg tracking-wide transition-opacity duration-500 translate-y-4 group-hover:translate-y-0">
+                    View Project
+                  </span>
+                </div>
+              </Link>
+            </motion.div>
+          ))}
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
+      </section>
+
+      {/* Philosophy Section */}
+      <motion.section 
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true }}
+        className="max-w-4xl text-center py-20 md:py-32 border-t border-white/10"
+      >
+        <h2 className="text-xl sm:text-2xl md:text-4xl font-medium leading-relaxed text-gray-300">
+          From precise After Effects animations to modern interfaces, I transform complex ideas into striking, unforgettable digital realities.
+        </h2>
+      </motion.section>
     </div>
   );
 }
