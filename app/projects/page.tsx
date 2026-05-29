@@ -5,18 +5,23 @@ import Image from 'next/image';
 import { motion } from 'framer-motion';
 
 const allProjects = [
-  { id: 'debonairs', title: 'Debonairs Pizza', category: 'Brand Identity', image: 'https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=800&q=80', link: '/projects/debonairs-pizza' },
-  { id: 'double-you', title: 'Double You', category: '3D Brand Intro Motion Graphics', image: 'https://images.unsplash.com/photo-1550745165-9bc0b252726f?w=800&q=80', link: '/projects/double-you' },
-  { id: 'anghami', title: 'Anghami', category: 'Music Streaming Motion Graphics', image: 'https://images.unsplash.com/photo-1614149162883-504ce4d13909?w=800&q=80', link: '/projects/anghami' },
-  { id: 'marriage', title: 'Marriage Invitation', category: 'Cinematic Animation', image: 'https://images.unsplash.com/photo-1511285560929-80b456fea0bc?w=800&q=80', link: '/projects/marriage-invitation' },
-  { id: 'noor', title: 'Noor Intro', category: '3D Motion Graphics', image: 'https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=800&q=80', link: '/projects/noor-intro' },
-  { id: 'aldaleen', title: 'Aldaleen Brochure', category: 'Contracting Company', image: 'https://images.unsplash.com/photo-1588681664899-f142ff2dc9b1?w=800&q=80', link: '/projects/aldaleen' },
+  // { id: 'debonairs', title: 'Debonairs Pizza', category: 'Brand Identity', image: 'https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=800&q=80', link: '/projects/debonairs-pizza' },
+  // { id: 'double-you', title: 'Double You', category: '3D Brand Intro Motion Graphics', image: 'https://images.unsplash.com/photo-1550745165-9bc0b252726f?w=800&q=80', link: '/projects/double-you' },
+  // { id: 'anghami', title: 'Anghami', category: 'Music Streaming Motion Graphics', image: 'https://images.unsplash.com/photo-1614149162883-504ce4d13909?w=800&q=80', link: '/projects/anghami' },
+  // { id: 'marriage', title: 'Marriage Invitation', category: 'Cinematic Animation', image: 'https://images.unsplash.com/photo-1511285560929-80b456fea0bc?w=800&q=80', link: '/projects/marriage-invitation' },
+  // { id: 'noor', title: 'Noor Intro', category: '3D Motion Graphics', image: 'https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=800&q=80', link: '/projects/noor-intro' },
+  // { id: 'aldaleen', title: 'Aldaleen Brochure', category: 'Contracting Company', image: 'https://images.unsplash.com/photo-1588681664899-f142ff2dc9b1?w=800&q=80', link: '/projects/aldaleen' },
+  { id: 'pharmasys  ', title: 'pharmasys motion graphic', category: 'pharmasys', image: 'https://images.unsplash.com/photo-1588681664899-f142ff2dc9b1?w=800&q=80', link: '/projects/pharmasys' },
+
 ];
 
 export default function Projects() {
   return (
-    <div className="px-5 md:px-8 max-w-7xl mx-auto min-h-screen">
-      <header className="pt-12 md:pt-20 pb-16 md:pb-20 max-w-5xl">
+    <div className="px-5 md:px-8 max-w-7xl mx-auto min-h-screen flex justify-center items-center">
+      <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-medium text-white">
+        Soon...
+      </h1>
+      {/* <header className="pt-12 md:pt-20 pb-16 md:pb-20 max-w-5xl">
         <h2 className="text-gray-400 text-xs md:text-sm font-semibold tracking-widest uppercase mb-4 md:mb-6">Work</h2>
         <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-medium leading-tight tracking-tight text-gray-100">
           We don't just create brands; we craft <span className="text-white italic">unforgettable experiences</span> that leave a lasting impression.
@@ -47,7 +52,7 @@ export default function Projects() {
             </Link>
           </motion.div>
         ))}
-      </div>
+      </div> */}
     </div>
   );
 }

@@ -35,11 +35,23 @@ const projectsData = {
     title: 'Aldaleen Brochure',
     category: 'Print & Branding',
     year: '2025',
-    role: 'Graphic Designer',
+    role: 'Motion Designer',
     videoUrl: '', // Left blank, so it will fall back to showing the heroImage
     heroImage: 'https://images.unsplash.com/photo-1588681664899-f142ff2dc9b1?w=1600&q=80',
     overview: 'A structural layout design for a contracting company emphasizing their industrial capabilities.',
     gallery: []
+  },
+    'pharmasys': {
+    title: 'pharmasys motion graphic',
+    category: 'pharmasys',
+    year: '2026',
+    role: 'Graphic Designer',
+    videoUrl: 'https://www.youtube.com/embed/8_l3cjs96aU', // Left blank, so it will fall back to showing the heroImage
+    heroImage: 'https://images.unsplash.com/photo-1588681664899-f142ff2dc9b1?w=1600&q=80',
+    overview: '',
+    gallery: [
+
+    ]
   }
 };
 
