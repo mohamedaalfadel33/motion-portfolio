@@ -14,8 +14,12 @@ const featuredProjects = [
 export default function Home() {
   return (
     <div className="flex flex-col items-center w-full px-5 md:px-8">
-      
+       <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-medium text-white flex items-center justify-center min-h-screen">
+        Soon...
+      </h1>
       {/* Hero Section */}
+      {/* 
+    
       <motion.section 
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
@@ -31,7 +35,7 @@ export default function Home() {
         </a>
       </motion.section>
 
-      {/* Featured Work Grid */}
+  
       <section className="w-full max-w-7xl pb-16 md:pb-20">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
           {featuredProjects.map((project, i) => (
@@ -60,7 +64,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Philosophy Section */}
+
       <motion.section 
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
@@ -71,6 +75,7 @@ export default function Home() {
           From precise After Effects animations to modern interfaces, I transform complex ideas into striking, unforgettable digital realities.
         </h2>
       </motion.section>
+         */}
     </div>
   );
 }
