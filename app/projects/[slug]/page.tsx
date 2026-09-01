@@ -10,15 +10,18 @@ const projectsData = {
   'debonairs-pizza': {
     title: 'Debonairs Pizza',
     category: 'Brand Identity & Motion',
-    year: '2023',
+    year: '2026',
     role: 'Motion Designer',
     // Example of a clean YouTube embed URL
-    videoUrl: 'https://www.youtube.com/embed/dQw4w9WgXcQ', 
+    videoUrl: 'https://www.youtube.com/embed/lswH7EaQb6U',
     heroImage: 'https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=1600&q=80',
     overview: 'A complete brand refresh for Debonairs Pizza. Modernizing visual language across social media, print, and motion segments while retaining core identity.',
     gallery: [
-      'https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=800&q=80',
-      'https://images.unsplash.com/photo-1513104890138-7c749659a591?w=800&q=80'
+      '/photos/debonairs/image.png',
+      '/photos/debonairs/image 1.png',
+      '/photos/debonairs/image 2.png',
+      '/photos/debonairs/image 3.png'
+
     ]
   },
   'double-you': {
@@ -26,22 +29,43 @@ const projectsData = {
     category: '3D Brand Intro',
     year: '2024',
     role: 'Motion Graphics Designer',
-    videoUrl: 'https://www.youtube.com/embed/dQw4w9WgXcQ', 
+    videoUrl: 'https://www.youtube.com/embed/Oyw_DQMzZpY',
     heroImage: 'https://images.unsplash.com/photo-1550745165-9bc0b252726f?w=1600&q=80',
     overview: 'A high-end 3D introduction designed in After Effects. Built to serve as the cinematic opener for the brand\'s digital presence.',
-    gallery: []
+    gallery: [
+      '/photos/double/image.png',
+      '/photos/double/image 1.png',
+    ]
   },
-  'aldaleen': {
-    title: 'Aldaleen Brochure',
-    category: 'Print & Branding',
-    year: '2025',
+  'anghami': {
+    title: 'anghami',
+    category: 'Motion Graphics',
+    year: '2026',
     role: 'Motion Designer',
-    videoUrl: '', // Left blank, so it will fall back to showing the heroImage
+    videoUrl: 'https://www.youtube.com/embed/KFs1yYOH7rA', // Left blank, so it will fall back to showing the heroImage
     heroImage: 'https://images.unsplash.com/photo-1588681664899-f142ff2dc9b1?w=1600&q=80',
     overview: 'A structural layout design for a contracting company emphasizing their industrial capabilities.',
-    gallery: []
+    gallery: [
+      '/photos/anghami/image 1.png',
+      '/photos/anghami/image 2.png',
+      '/photos/anghami/image 3.png',
+      '/photos/anghami/image 4.png',
+    ]
   },
-    'pharmasys': {
+  'livingbridge': {
+    title: 'livingbridge',
+    category: 'Contracting Company',
+    year: '2025',
+    role: 'Motion Designer',
+    videoUrl: 'https://www.youtube.com/embed/vF8Uo0RY63I', // Left blank, so it will fall back to showing the heroImage
+    heroImage: 'https://images.unsplash.com/photo-1588681664899-f142ff2dc9b1?w=1600&q=80',
+    overview: 'A structural layout design for a contracting company emphasizing their industrial capabilities.',
+    gallery: [
+      '/photos/livingbridge/image 1.png',
+      '/photos/livingbridge/image 2.png',
+    ]
+  },
+  'pharmasys': {
     title: 'pharmasys motion graphic',
     category: 'pharmasys',
     year: '2026',
@@ -50,22 +74,37 @@ const projectsData = {
     heroImage: 'https://images.unsplash.com/photo-1588681664899-f142ff2dc9b1?w=1600&q=80',
     overview: '',
     gallery: [
-
+      '/photos/pharmasys/image.png',
+      '/photos/pharmasys/image 1.png',
+      '/photos/pharmasys/image 2.png',
+      '/photos/pharmasys/image 3.png'
     ]
-  }
+  },
+  'noor-intro': {
+    title: 'Noor Intro',
+    category: '3D Motion Graphics',
+    year: '2023',
+    role: 'Motion Designer',
+    videoUrl: 'https://www.youtube.com/embed/Bvyex8MCIcY',
+    heroImage: '/photos/noor.png',
+    overview: 'A high-end 3D motion graphics intro crafted with precision keyframing and dynamic visual composition.',
+    gallery: []
+  },
+
 };
 
 export default function ProjectDetail({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = use(params);
-  const project = projectsData[slug as keyof typeof projectsData];
+  const normalizedSlug = slug.replace(/-intro$/, '');
+  const project = projectsData[slug as keyof typeof projectsData] || projectsData[normalizedSlug as keyof typeof projectsData];
 
   if (!project) notFound();
 
   return (
     <div className="px-5 md:px-8 max-w-5xl mx-auto py-8 md:py-20 min-h-screen">
-      
+
       {/* Back Button */}
-      <motion.div 
+      <motion.div
         initial={{ opacity: 0, x: -20 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.5 }}
@@ -78,7 +117,7 @@ export default function ProjectDetail({ params }: { params: Promise<{ slug: stri
 
       {/* Header Info */}
       <header className="mb-10 md:mb-16">
-        <motion.h1 
+        <motion.h1
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
@@ -86,8 +125,8 @@ export default function ProjectDetail({ params }: { params: Promise<{ slug: stri
         >
           {project.title}
         </motion.h1>
-        
-        <motion.div 
+
+        <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.1 }}
@@ -109,7 +148,7 @@ export default function ProjectDetail({ params }: { params: Promise<{ slug: stri
       </header>
 
       {/* HERO SECTION: Video Player OR Image Fallback */}
-      <motion.div 
+      <motion.div
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, delay: 0.2 }}
@@ -117,22 +156,23 @@ export default function ProjectDetail({ params }: { params: Promise<{ slug: stri
       >
         {project.videoUrl ? (
           <div className="w-full aspect-video relative">
-            <iframe 
+            <iframe
               // Added rel=0 (no related videos from others) and modestbranding=1 (hides YT logo)
-              src={`${project.videoUrl}?rel=0&modestbranding=1`} 
+              src={`${project.videoUrl}?rel=0&modestbranding=1`}
               className="absolute top-0 left-0 w-full h-full"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowFullScreen
             ></iframe>
           </div>
         ) : (
           <div className="w-full aspect-[4/3] sm:aspect-[16/9] md:aspect-[21/9] relative">
-            <Image 
-              src={project.heroImage} 
-              alt={project.title} 
-              fill 
-              className="object-cover" 
-              priority 
+            <Image
+              src={project.heroImage}
+              alt={project.title}
+              fill
+              sizes="(max-width: 768px) 100vw, 1024px"
+              className="object-cover"
+              priority
             />
           </div>
         )}
@@ -154,7 +194,7 @@ export default function ProjectDetail({ params }: { params: Promise<{ slug: stri
       {project.gallery && project.gallery.length > 0 && (
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-6 mb-12 md:mb-20">
           {project.gallery.map((imgUrl, idx) => (
-            <motion.div 
+            <motion.div
               key={idx}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -162,7 +202,13 @@ export default function ProjectDetail({ params }: { params: Promise<{ slug: stri
               transition={{ duration: 0.5, delay: idx * 0.1 }}
               className="relative aspect-square sm:aspect-[4/3] rounded-xl md:rounded-2xl overflow-hidden bg-gray-900 border border-white/10"
             >
-              <Image src={imgUrl} alt={`${project.title} gallery shot ${idx + 1}`} fill className="object-cover" />
+              <Image
+                src={imgUrl}
+                alt={`${project.title} gallery shot ${idx + 1}`}
+                fill
+                sizes="(max-width: 640px) 100vw, 50vw"
+                className="object-cover"
+              />
             </motion.div>
           ))}
         </div>

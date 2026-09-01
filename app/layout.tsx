@@ -12,14 +12,14 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className="scroll-smooth">
+    <html lang="en" className="scroll-smooth" data-scroll-behavior="smooth" suppressHydrationWarning>
       <body className={`${inter.className} min-h-screen bg-[#0a0a0a] text-white selection:bg-white selection:text-black`}>
         
         {/* Persistent Navbar */}
         <nav className="fixed top-0 w-full z-50 flex items-center justify-between px-5 md:px-8 py-4 md:py-6 bg-[#0a0a0a]/80 backdrop-blur-md border-b border-white/10">
           <div className="flex items-center gap-2 font-bold text-lg md:text-xl tracking-tighter">
             <div className="w-8 h-8 rounded-full flex items-center justify-center text-black text-xs">
-              <img src="/logo.png" alt="Logo" className="w-10 h-10 object-contain" />
+              <img src="/logo.png" alt="Logo" className="w-12 h-12 object-contain" />
             </div>
             <Link href="/">Mohamed Dzn</Link>
           </div>
