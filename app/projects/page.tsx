@@ -46,7 +46,7 @@ const allProjects = [
   {
     id: 'livingbridge',
     title: 'livingbridge',
-    category: 'Contracting Company',
+    category: 'Motion Graphics',
     image:
       '/photos/livingbridge/image.png',
     link: '/projects/livingbridge',
