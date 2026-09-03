@@ -51,6 +51,14 @@ const allProjects = [
       '/photos/livingbridge/image.png',
     link: '/projects/livingbridge',
   },
+  {
+    id: 'public',
+    title: 'Public.com',
+    category: 'Motion Graphics',
+    image:
+      '/photos/public/image.png',
+    link: '/projects/public',
+  },
 ];
 
 export default function Projects() {

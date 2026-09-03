@@ -90,6 +90,20 @@ const projectsData = {
     overview: 'A high-end 3D motion graphics intro crafted with precision keyframing and dynamic visual composition.',
     gallery: []
   },
+  'public': {
+    title: 'Public.com',
+    category: 'Motion Graphics',
+    year: '2026',
+    role: 'Motion Designer',
+    videoUrl: 'https://www.youtube.com/embed/pVYk_dJjHGQ',
+    heroImage: '/photos/public/image.png',
+    overview: 'A high-end 3D motion graphics intro crafted with precision keyframing and dynamic visual composition.',
+    gallery: [
+      '/photos/public/image 1.png',
+      '/photos/public/image 2.png',
+      '/photos/public/image 3.png',
+    ]
+  },
 
 };
 
