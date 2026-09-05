@@ -6,6 +6,14 @@ import { motion } from 'framer-motion';
 
 const allProjects = [
   {
+    id: 'pixle',
+    title: 'Google Pixle 10a',
+    category: 'Motion Graphics',
+    image:
+      '/photos/pixle/image.png',
+    link: '/projects/pixle',
+  },
+  {
     id: 'debonairs',
     title: 'Debonairs Pizza',
     category: 'Brand Identity',
@@ -58,7 +66,7 @@ const allProjects = [
     image:
       '/photos/public/image.png',
     link: '/projects/public',
-  },
+  }
 ];
 
 export default function Projects() {

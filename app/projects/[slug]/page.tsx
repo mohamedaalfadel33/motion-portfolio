@@ -7,7 +7,21 @@ import { motion } from 'framer-motion';
 import { notFound } from 'next/navigation';
 
 const projectsData = {
-  'debonairs-pizza': {
+  'pixle': {
+    title: 'Google Pixle 10 a',
+    category: 'Motion Graphics',
+    year: '2026',
+    role: 'Motion Designer',
+    videoUrl: 'https://www.youtube.com/embed/2GtW1ktAiOE',
+    heroImage: '/photos/public/image.png',
+    overview: 'A dynamic 15-second 3D motion graphics teaser designed to showcase the sleek industrial design and premium features of the Google Pixel 10a. The goal was to craft a fast-paced, high-impact commercial that balances minimalist Google aesthetics with bold, modern motion design.',
+    gallery: [
+      '/photos/pixle/image 1.png',
+      '/photos/pixle/image 2.png',
+      '/photos/pixle/image 3.png',
+    ]
+  }
+  , 'debonairs-pizza': {
     title: 'Debonairs Pizza',
     category: 'Brand Identity & Motion',
     year: '2026',
@@ -88,7 +102,10 @@ const projectsData = {
     videoUrl: 'https://www.youtube.com/embed/Bvyex8MCIcY',
     heroImage: '/photos/noor.png',
     overview: 'A high-end 3D motion graphics intro crafted with precision keyframing and dynamic visual composition.',
-    gallery: []
+    gallery: [
+      '/photos/noor/image.png',
+      '/photos/noor/image 1.png',
+    ]
   },
   'public': {
     title: 'Public.com',
@@ -104,6 +121,7 @@ const projectsData = {
       '/photos/public/image 3.png',
     ]
   },
+
 
 };
 
